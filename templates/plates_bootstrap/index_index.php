@@ -16,7 +16,8 @@
               <p><br /><br /><br /></p>
               <div class="container max-w-xl mx-auto text-left flex items-center flex-wrap">
                   <div class="col-lg-8">
-                      <h1>Welcome to<br /><?php echo $view['appname'] ?>!</h1>
+                      <h1>Welcome to<br /><?php echo $view['appname'] ?>! </h1>
+
                       <p class="text-md md:text-lg text-grey-dark leading-normal">
                           You can view a list of all products!
                       </p>
