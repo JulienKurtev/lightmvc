@@ -89,6 +89,11 @@ body {
  * Placeholder dashboard ideas
  */
 
+.sect-signing {
+  padding: 200px 0;
+}
+
+
 .placeholders {
   margin-bottom: 30px;
   text-align: center;
@@ -110,3 +115,24 @@ body {
 #pageBody {
   text-align: center;
 }
+
+.form-signin {
+  background-color: #ffffff;
+  padding: 20px 30px;
+  text-align: center;
+  box-shadow: 0 0 10px  #ccc;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+
+  max-width: 370px; margin:auto;
+}
+
+.form-signin  .form-row {
+  margin-bottom: 20px;}
+
+.form-signin h1 {
+  margin-bottom: 20px;}
+.form-signin input {
+  height: 50px;}
+

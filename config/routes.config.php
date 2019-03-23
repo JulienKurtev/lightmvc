@@ -36,4 +36,9 @@ $baseConfig['routes'] = [
         '/foo[/{action}]',
         'strangecontroller/foo',
     ],
+    7 => [
+        'GET',
+        '/login[/{action}]',
+        'login',
+    ],
 ];
