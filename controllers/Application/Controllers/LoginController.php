@@ -8,13 +8,21 @@
 
 
 namespace Application\Controllers;
+
 use Ascmvc\Mvc\Controller;
+use Application\Models\Entity\Users;
+use Application\Services\SessionService;
+use Application\Services\CrudSessionsServiceTrait;
+
 use Ascmvc\AscmvcControllerFactoryInterface;
 use Ascmvc\Mvc\AscmvcEventManager;
 use Ascmvc\Mvc\AscmvcEvent;
 
-class LoginController extends Controller
+class LoginController extends Controller 
 {
+
+ 
+
     public function indexAction($vars = null)
     {
 
