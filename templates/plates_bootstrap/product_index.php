@@ -39,17 +39,14 @@
                             <td><?php echo $product['price'] ?></td>
                             <td><?php echo $product['description'] ?></td>
                             <td><?php echo $product['image'] ?></td>
-
                             <?php if ($view['auth']): ?>
-                                <td>
-                                    <a href="<?php echo $view['urlbaseaddr'] ?>products/edit/<?php echo $product['id'] ?>">Modify</a>
-                                </td>
-
-                                <td>
-                                    <a href="<?php echo $view['urlbaseaddr'] ?>products/delete/<?php echo $product['id'] ?>">Delete</a>
-                                </td>
-                            <?php ?>
-
+                            <td>
+                                <a href="<?php echo $view['urlbaseaddr'] ?>products/edit/<?php echo $product['id'] ?>">Modify</a>
+                            </td>
+                            <td>
+                                <a href="<?php echo $view['urlbaseaddr'] ?>products/delete/<?php echo $product['id'] ?>">Delete</a>
+                            </td>
+                            <?php endif; ?>
                         </tr>
                       <?php endforeach; ?>
                     <?php endif ?>
@@ -58,7 +55,7 @@
             </div>
             <?php if ($view['auth']): ?>
                 <p><a href="<?php echo $view['urlbaseaddr'] ?>products/add" class="mt-6 inline-block bg-white text-black no-underline px-4 py-3 shadow-lg">Add new product</a></p>
-            <?php ?>
+            <?php endif;?>
 
         </div> <!-- END pageBody -->
       </div>

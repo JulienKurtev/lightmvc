@@ -21,11 +21,10 @@ use Ascmvc\Mvc\AscmvcEvent;
 class LoginController extends Controller 
 {
 
-
-
     public function indexAction($vars = null)
     {
-        $this->view['auth'] = $this->authenticated();
+        $session = new SessionService();
+        $session->loginVerification();
 
         $this->view['bodyjs'] = 1;
 
