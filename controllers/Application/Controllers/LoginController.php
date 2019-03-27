@@ -21,17 +21,17 @@ use Ascmvc\Mvc\AscmvcEvent;
 class LoginController extends Controller 
 {
 
- 
+
 
     public function indexAction($vars = null)
     {
+        $this->view['auth'] = $this->authenticated();
 
         $this->view['bodyjs'] = 1;
 
         $this->view['templatefile'] = 'login';
 
         return $this->view;
-
 
     }
 }

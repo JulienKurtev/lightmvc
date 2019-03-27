@@ -5,6 +5,8 @@ namespace Application\Controllers;
 use Application\Models\Entity\Products;
 use Application\Services\CrudProductsService;
 use Application\Services\CrudProductsServiceTrait;
+use Application\Services\SessionService;
+use Application\Services\CrudSessionsServiceTrait;
 use Ascmvc\AscmvcControllerFactoryInterface;
 use Ascmvc\Mvc\AscmvcEventManager;
 use Ascmvc\Mvc\Controller;
@@ -50,6 +52,20 @@ class ProductController extends Controller implements AscmvcControllerFactoryInt
         return $response;
     }*/
 
+
+    //Check if user is Authenticated
+
+    protected function authenticated(){
+        $auth = new SessionService();
+        $auth->loginVerification();
+
+        if($auth->getPostLoginForm()){
+            return true;
+        }else{
+            $auth->getErrorMessage();
+        }
+    }
+
     public function onDispatch(AscmvcEvent $event)
     {
         $this->view['saved'] = 0;
@@ -91,7 +107,11 @@ class ProductController extends Controller implements AscmvcControllerFactoryInt
             $results['nodata'] = 'No results';
         }
 
+
+
         $this->view['bodyjs'] = 1;
+
+        $this->view['auth'] = $this->authenticated();
 
         $this->view['results'] = $results;
         

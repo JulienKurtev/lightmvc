@@ -39,19 +39,27 @@
                             <td><?php echo $product['price'] ?></td>
                             <td><?php echo $product['description'] ?></td>
                             <td><?php echo $product['image'] ?></td>
-                            <td>
-                                <a href="<?php echo $view['urlbaseaddr'] ?>products/edit/<?php echo $product['id'] ?>">Modify</a>
-                            </td>
-                            <td>
-                                <a href="<?php echo $view['urlbaseaddr'] ?>products/delete/<?php echo $product['id'] ?>">Delete</a>
-                            </td>
+
+                            <?php if ($view['auth']): ?>
+                                <td>
+                                    <a href="<?php echo $view['urlbaseaddr'] ?>products/edit/<?php echo $product['id'] ?>">Modify</a>
+                                </td>
+
+                                <td>
+                                    <a href="<?php echo $view['urlbaseaddr'] ?>products/delete/<?php echo $product['id'] ?>">Delete</a>
+                                </td>
+                            <?php ?>
+
                         </tr>
                       <?php endforeach; ?>
                     <?php endif ?>
                 </tbody>
               </table>
             </div>
-            <p><a href="<?php echo $view['urlbaseaddr'] ?>products/add" class="mt-6 inline-block bg-white text-black no-underline px-4 py-3 shadow-lg">Add new product</a></p>
+            <?php if ($view['auth']): ?>
+                <p><a href="<?php echo $view['urlbaseaddr'] ?>products/add" class="mt-6 inline-block bg-white text-black no-underline px-4 py-3 shadow-lg">Add new product</a></p>
+            <?php ?>
+
         </div> <!-- END pageBody -->
       </div>
     </div>
