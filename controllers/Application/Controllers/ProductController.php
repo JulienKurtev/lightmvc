@@ -55,8 +55,8 @@ class ProductController extends Controller implements AscmvcControllerFactoryInt
 
     //Check if user is Authenticated
 
-    protected function authenticated(){
-        $auth = new SessionService();
+    protected function authenticated(SessionService $auth){
+
         $auth->loginVerification();
 
         if($auth->getPostLoginForm()){
