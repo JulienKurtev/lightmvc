@@ -13,7 +13,7 @@
     <div class="container">
         <div class="row">
             <section class="sect-signing">
-            <form class="form-signin">
+            <form class="form-signin" action="login">
                 <h1 class="h3 mb-3 font-weight-normal">Please sign in</h1>
                 <div class="form-row"><label for="username" class="sr-only">Username</label>
                 <input type="text" id="username" name="username" class="form-control" placeholder="Username" required autofocus>
