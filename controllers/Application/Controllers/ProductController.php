@@ -61,8 +61,6 @@ class ProductController extends Controller implements AscmvcControllerFactoryInt
 
         if($auth->getPostLoginForm()){
             return true;
-        }else{
-            $auth->getErrorMessage();
         }
     }
 
