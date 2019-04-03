@@ -41,4 +41,9 @@ $baseConfig['routes'] = [
         '/login[/{action}]',
         'login',
     ],
+    7 => [
+        'GET',
+        '/logout[/{action}]',
+        'logout',
+    ],
 ];

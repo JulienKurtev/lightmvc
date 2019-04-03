@@ -5,11 +5,13 @@ namespace Application\Controllers;
 use Application\Models\Entity\Products;
 use Application\Services\CrudProductsService;
 use Application\Services\CrudProductsServiceTrait;
+use Application\Services\SessionService;
 use Ascmvc\AscmvcControllerFactoryInterface;
 use Ascmvc\Mvc\AscmvcEventManager;
 use Ascmvc\Mvc\Controller;
 use Ascmvc\Mvc\AscmvcEvent;
 use Pimple\Container;
+use Zend\Diactoros\Response;
 
 class ProductController extends Controller implements AscmvcControllerFactoryInterface
 {
@@ -102,6 +104,15 @@ class ProductController extends Controller implements AscmvcControllerFactoryInt
 
     public function addAction($vars)
     {
+        if ($this->view['authenticated'] === false){
+            $response = new Response();
+            $response->getBody()->write('403 Forbidden');
+            $response = $response
+                ->withStatus(403);
+
+            return $response;
+        }
+
         if (!empty($vars['post'])) {
             // Would have to sanitize and filter the $_POST array.
             $productArray['name'] = (string) $vars['post']['name'];
@@ -125,6 +136,15 @@ class ProductController extends Controller implements AscmvcControllerFactoryInt
 
     public function editAction($vars)
     {
+        if ($this->view['authenticated'] === false){
+            $response = new Response();
+            $response->getBody()->write('403 Forbidden');
+            $response = $response
+                ->withStatus(403);
+
+            return $response;
+        }
+
         if (!empty($vars['post'])) {
             // Would have to sanitize and filter the $_POST array.
             $productArray['id'] = (string) $vars['post']['id'];
@@ -166,6 +186,15 @@ class ProductController extends Controller implements AscmvcControllerFactoryInt
 
     public function deleteAction($vars)
     {
+        if ($this->view['authenticated'] === false){
+            $response = new Response();
+            $response->getBody()->write('403 Forbidden');
+            $response = $response
+                ->withStatus(403);
+
+            return $response;
+        }
+
 		// Sanitize and filter the $_GET array.
 		$id = (int) $vars['get']['id'];
 

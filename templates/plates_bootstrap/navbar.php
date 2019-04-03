@@ -26,6 +26,12 @@
                         <?php endforeach; ?>
                         </ul>
                         </li> -->
+
+                        <?php if ($view['authenticated'] === true): ?>
+                        <li><a href="<?php echo $view['urlbaseaddr'] ?>logout">Logout</a></li>
+                        <?php else: ?>
+                        <li><a href="<?php echo $view['urlbaseaddr'] ?>login">Login</a></li>
+                        <?php endif ?>
                     </ul>
                 </div>
             </div>
